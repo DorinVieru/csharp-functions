@@ -99,6 +99,88 @@ namespace csharp_functions
                 Console.WriteLine($"La somma totale degli elementi dell'array è: {somma}");
             }
             
+            // -----------------------------------------------------------------
+            // BONUS
+            // -----------------------------------------------------------------
+            {
+                // Stampa array
+                void PrintArray(int[] array)
+                {
+                    Console.Write("[");
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        Console.Write(array[i]);
+                        if (i < array.Length - 1)
+                            Console.Write(", ");
+                    }
+                    Console.WriteLine("]");
+                }
+
+                // Quadrato di un numero
+                int Quadrato(int numero)
+                {
+                    return numero * numero;
+                }
+
+                // Quadrato di un array
+                int[] ElevaArrayAlQuadrato(int[] array)
+                {
+                    int[] arrayQuadrati = new int[array.Length];
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        arrayQuadrati[i] = array[i] * array[i];
+                    }
+                    return arrayQuadrati;
+                }
+
+                // Somma quadrato
+                int SommaQuadratiArray(int[] array)
+                {
+                    int sommaQuadrati = 0;
+                    foreach (int numero in array)
+                    {
+                        sommaQuadrati += numero * numero;
+                    }
+                    return sommaQuadrati;
+                }
+
+                // Somma di tutti gli elementi di un array
+                int sommaElementiArray(int[] array)
+                {
+                    int somma = 0;
+                    foreach (int numero in array)
+                    {
+                        somma += numero;
+                    }
+                    return somma;
+                }
+
+                // Utente inserisce la lunghezza dell'array desiderata
+                Console.Write("Inserisci la lunghezza dell'array: ");
+                int lunghezza = Convert.ToInt32(Console.ReadLine());
+
+                int[] numeri = new int[lunghezza];
+                for (int i = 0; i < lunghezza; i++)
+                {
+                    Console.Write($"Inserisci il {i + 1}° numero: ");
+                    numeri[i] = Convert.ToInt32(Console.ReadLine());
+                }
+
+                // Chiamata alle funzioni
+                Console.WriteLine("Array creato:");
+                PrintArray(numeri);
+
+                Console.WriteLine("Array con elementi elevati al quadrato:");
+                int[] numeriQuadrati = ElevaArrayAlQuadrato(numeri);
+                PrintArray(numeriQuadrati);
+
+                int sommaQuadrati = SommaQuadratiArray(numeri);
+                Console.WriteLine($"La somma totale dei quadrati degli elementi dell'array è: {sommaQuadrati}");
+
+                int somma = sommaElementiArray(numeri);
+                Console.WriteLine($"La somma totale degli elementi dell'array è: {somma}");
+            }
+            
         }
     }
 }
