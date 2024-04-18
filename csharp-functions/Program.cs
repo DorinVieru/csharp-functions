@@ -34,6 +34,39 @@ namespace csharp_functions
                 Console.WriteLine($"Il quadrato di {numero} è: {quadrato}");
             }
 
+            // FUNZIONE PER ELEVARE AL QUADRATO GLI ELEMENTI DELL'ARRAY PASSATO COME PARAMETRO CREANDO UN NUOVO ARRAY
+            {
+                int[] ElevaArrayAlQuadrato(int[] array)
+                {
+                    int[] arrayQuadrati = new int[array.Length];
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        arrayQuadrati[i] = array[i] * array[i];
+                    }
+                    return arrayQuadrati;
+                }
+
+                void PrintArray(int[] array)
+                {
+                    Console.Write("[");
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        Console.Write(array[i]);
+                        if (i < array.Length - 1)
+                            Console.Write(", ");
+                    }
+                    Console.WriteLine("]");
+                }
+                int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
+                int[] numeriQuadrati = ElevaArrayAlQuadrato(numbers);
+
+                Console.WriteLine("Array originale:");
+                PrintArray(numbers);
+
+                Console.WriteLine("Array con elementi elevati al quadrato:");
+                PrintArray(numeriQuadrati);
+            }
+            
             
             
         }
