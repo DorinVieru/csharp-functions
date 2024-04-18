@@ -67,7 +67,21 @@ namespace csharp_functions
                 PrintArray(numeriQuadrati);
             }
             
-            
+            // FUNZIONE PER RESTITUIRE LA SOMMA TOTALE DI TUTTI GLI ELEMENTI DELL'ARRAY
+            {
+                int sommaElementiArray(int[] array)
+                {
+                    int somma = 0;
+                    foreach (int numero in array)
+                    {
+                        somma += numero;
+                    }
+                    return somma;
+                }
+                int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
+                int somma = sommaElementiArray(numbers);
+                Console.WriteLine($"La somma totale degli elementi dell'array è: {somma}");
+            }
             
         }
     }
