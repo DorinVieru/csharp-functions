@@ -23,6 +23,17 @@ namespace csharp_functions
                 StampaArray(elements);
             }
 
+            // FUNZIONE PER CALCOLARE IL QUADRATO DI UN NUMERO PASSATO COME PARAMETRO
+            {
+                int Quadrato(int numero)
+                {
+                    return numero * numero;
+                }
+                int numero = 4;
+                int quadrato = Quadrato(numero);
+                Console.WriteLine($"Il quadrato di {numero} è: {quadrato}");
+            }
+
             
             
         }
